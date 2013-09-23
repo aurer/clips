@@ -6,7 +6,7 @@
 				<div class="clip-options">
 					<a class="view-clip" href="/clips/{{ $clip->slug }}/">View details</a>
 					<a class="edit-clip" href="/clips/{{ $clip->slug }}/edit/">Edit</a>
-					<a class="delete-clip" href="/clips/{{ $clip->slug }}/delete/">Delete</a>
+					<a class="remove-clip" href="/clips/{{ $clip->slug }}/remove/">Remove</a>
 					<a class="raw-clip" href="/clips/{{ $clip->slug }}/raw/">Raw</a>
 				</div>
 				<pre class="clip-code hidden"><code class="prettyprint">{{ HTML::entities($clip->code) }}</code></pre>

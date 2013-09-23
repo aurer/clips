@@ -237,7 +237,7 @@ body{
 	background: url(../gfx/sprite.png) no-repeat 1px 2px;
 	padding-left: 20px;
 }
-.clip-options .delete-clip{
+.clip-options .remove-clip{
 	background: url(../gfx/sprite.png) no-repeat 2px -17px;
 }
 .clip-options .view-clip{

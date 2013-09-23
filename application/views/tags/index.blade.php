@@ -6,7 +6,7 @@
 		<dl>
 			<dt>{{ $initial }}</dt>
 			@foreach($tags as $tag)
-				<dd><a href="/tags/{{ $tag->slug }}">{{ $tag->tag }}</a></dd>
+				<dd><a href="/clips/tagged/{{ $tag->slug }}">{{ $tag->tag }}</a></dd>
 			@endforeach
 		</dl>
 	@endforeach

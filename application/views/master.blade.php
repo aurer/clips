@@ -26,7 +26,7 @@
 				<a class="btn new" id="new-clip" href="/clips/new/"><span>Add a Clip</span></a>
 				<a class="btn {{ (URI::segment(1) == 'clips') ? 'active' : 'inactive' }}" id="viewlist" href="/clips" title="Clips"><img src="/theme/grey/gfx/list.png" alt="Clips"/></a>
 				<a class="btn {{ (URI::segment(1) == 'tags') ? 'active' : 'inactive' }}" id="viewgrid" href="/tags" title="Tags"><img src="/theme/grey/gfx/grid.png" alt="Tags"/></a>
-				<form id="filter" action="/clips/" method="get">
+				<form id="filter" action="" method="get">
 					<input class="rounded" name="q" type="text" id="filter-keyword" placeholder="Filter" value="{{ Input::get('q') }}"/>
 				</form>
 			</div>

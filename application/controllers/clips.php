@@ -8,6 +8,7 @@ class Clips_Controller extends Base_Controller
 	{
 		$data['pagetitle'] = "Clips";
 		
+		// Search filter
 		if( Input::get('q') ){
 			$search = Input::get('q');
 			$data['clips'] = Clip::where('title', 'LIKE', "%$search%")
@@ -141,7 +142,7 @@ class Clips_Controller extends Base_Controller
 		}
 	}
 
-	public function get_delete($slug)
+	public function get_remove($slug)
 	{
 		$clip = Clip::where_slug($slug)->first();
 		$clip->active = false;
