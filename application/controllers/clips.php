@@ -13,9 +13,10 @@ class Clips_Controller extends Base_Controller
 			$search = Input::get('q');
 			$data['clips'] = Clip::where('title', 'LIKE', "%$search%")
 				->or_where('description', 'LIKE', "%$search%")
+				->order_by('created_at', 'DESC')
 				->get();
 		} else {
-			$data['clips'] = Clip::all();
+			$data['clips'] = Clip::order_by('created_at', 'DESC')->get();
 		}
 
 		return View::make('clips.index')->with($data);
@@ -55,7 +56,7 @@ class Clips_Controller extends Base_Controller
 		} 
 		else {
 			
-			$clip = Clip::create( array(
+			$clip = DB::table('clips')->insert_get_id( array(
 				'title' => Input::get('title'),
 				'slug' => Str::slug(Input::get('title')),
 				'code' => Input::get('code'),
