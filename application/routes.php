@@ -40,7 +40,7 @@ Route::get('clips/new', 'clips@new');
 Route::get('clips/(:any)', 'clips@view');
 Route::get('clips/(:any)/edit', 'clips@edit');
 Route::post('clips/(:any)/edit', 'clips@edit');
-Route::get('clips/(:any)/delete', 'clips@delete');
+Route::get('clips/(:any)/remove', 'clips@remove');
 Route::get('clips/(:any)/raw', 'clips@raw');
 
 Route::get('tags/(:any)', 'tags@view');
