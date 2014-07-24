@@ -56,7 +56,7 @@ class Clips_Controller extends Base_Controller
 		} 
 		else {
 			
-			$clip = DB::table('clips')->insert_get_id( array(
+			$clipid = DB::table('clips')->insert_get_id( array(
 				'title' => Input::get('title'),
 				'slug' => Str::slug(Input::get('title')),
 				'code' => Input::get('code'),
@@ -67,7 +67,7 @@ class Clips_Controller extends Base_Controller
 
 			foreach (explode(',', Input::get('tags')) as $tag) {
 				Tag::create(array(
-					'clip_id' => $clip->id,
+					'clip_id' => $clipid,
 					'tag'	=> trim($tag),
 					'slug'	=> Str::slug(trim($tag)),
 					'active' => true,
