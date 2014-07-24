@@ -96,7 +96,11 @@ class Clips_Controller extends Base_Controller
 	public function get_edit($slug)
 	{
 		$data['clip'] = Clip::where_slug($slug)->where_active(true)->first();
-		$data['clip']->tags = Tag::as_csv( Tag::where('clip_id', '=', $data['clip']->id)->get('tag') );
+
+		$tags = Tag::where('clip_id', '=', $data['clip']->id)->get('tag');
+		if ($tags) {
+			$data['clip']->tags = Tag::as_csv( $tags );
+		}
 
 		$data['pagetitle'] = "Clips / Edit / " . $data['clip']->title;
 		return View::make('clips.edit')->with($data);
